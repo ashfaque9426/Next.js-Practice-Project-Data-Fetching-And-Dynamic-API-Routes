@@ -122,13 +122,14 @@ export default function Home() {
         <h2 className='my-12'>Users Available: {users.length}</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-9'>
           {
-            users.length > 0 && users.map(user => <Link key={user._id} rel="preload" className='cursor-pointer' href={`/showSingleUser/${user._id}`}>
-              <article>
+            users.length > 0 && users.map(user => <article key={user._id} className='cursor-pointer'><Link rel="preload" href={`/showSingleUser/${user._id}`}>
+              
                 <h3>Name: {user.userName}</h3>
                 <p>Email: {user.email}</p>
                 <small>Password: {user.password}</small>
-              </article>
-            </Link>)
+              
+            </Link> 
+            </article>)
           }
         </div>
       </section>
